@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/gleephDamien/react-native-leanplum/compare/v2.1.1...v2.1.2) (2019-04-10)
+
+
+### Bug Fixes
+
+* **version:** update version ([82c4adf](https://github.com/gleephDamien/react-native-leanplum/commit/82c4adf))
+
 ## [2.1.1](https://github.com/gleephDamien/react-native-leanplum/compare/v2.1.0...v2.1.1) (2019-04-10)
 
 
