@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/gleephDamien/react-native-leanplum/compare/v2.1.2...v2.1.3) (2019-04-11)
+
+
+### Bug Fixes
+
+* **android:** getting app_id and keys ([98e04d0](https://github.com/gleephDamien/react-native-leanplum/commit/98e04d0))
+
 ## [2.1.2](https://github.com/gleephDamien/react-native-leanplum/compare/v2.1.1...v2.1.2) (2019-04-10)
 
 
