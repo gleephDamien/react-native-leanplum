@@ -6,9 +6,9 @@ npm install --save @gleeph/react-native-leanplum
 react-native link @gleeph/react-native-leanplum
 ```
 
-##configuration
+## configuration
 
-###android
+### android
 
 Add Leanplum keys into the AndroidManifest.xml file.
 
@@ -26,7 +26,7 @@ check the MainApplication.java file and replace :
 new RNLeanplumPackage(MainApplication.this)
 
 
-###ios
+### ios
 
 Add Leanplum keys into the Info.plist file.
 
