@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/gleephDamien/react-native-leanplum/compare/v2.1.3...v2.1.4) (2019-04-15)
+
+
+### Bug Fixes
+
+* **ios:** removing useless logs in ios ([297f621](https://github.com/gleephDamien/react-native-leanplum/commit/297f621))
+
 ## [2.1.3](https://github.com/gleephDamien/react-native-leanplum/compare/v2.1.2...v2.1.3) (2019-04-11)
 
 
