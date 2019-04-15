@@ -25,12 +25,10 @@ RCT_EXPORT_MODULE(Leanplum);
 - (RNLeanplum *)init {
 
     self=[super init];
-    NSLog(@"fhiudjshic hdsi hfioudsiufhdkjs hfoi dsiojhfijdsfkj hdskjhfkjdskjfhdsjkhfkjdsh merde");
-    RCTLog(@"fhiudjshic hdsi hfioudsiufhdkjs hfoi dsiojhfijdsfkj hdskjhfkjdskjfhdsjkhfkjdsh merde");
 #ifdef DEBUG
     LEANPLUM_USE_ADVERTISING_ID;
     [Leanplum setAppId:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"LeanplumAppId"]
-    withDevelopmentKey:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"LeanplumTestSecret"]];
+    withDevelopmentKey:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"LeanplumDevSecret"]];
 #else
     [Leanplum setAppId:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"LeanplumAppId"]
      withProductionKey:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"LeanplumProdSecret"]];
