@@ -2,23 +2,24 @@ apply plugin: 'com.android.library'
 
 buildscript {
     repositories {
+        maven { url "https://repo.leanplum.com/" }
         mavenCentral()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.google.gms:google-services:4.0.1'
     }
 }
 
 repositories {
     mavenCentral()
     maven { url "https://repo.leanplum.com/" }
-    maven { url "$rootDir/node_modules/react-native/android" }
     maven { url 'https://jitpack.io' }
+    maven { url "$rootDir/node_modules/react-native/android" }
 }
-
 android {
-    compileSdkVersion 25
+    compileSdkVersion 28
     buildToolsVersion '25.0.1'
 
     defaultConfig {
@@ -38,4 +39,5 @@ android {
 dependencies {
     implementation "com.facebook.react:react-native:+"
     implementation 'com.leanplum:leanplum-fcm:4.2.3'
+    implementation "com.google.firebase:firebase-messaging:17.3.2"
 }

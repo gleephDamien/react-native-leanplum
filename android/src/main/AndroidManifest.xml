@@ -1,5 +1,22 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
           package="com.reactnativeleanplum">
-          
+    <uses-sdk
+            tools:overrideLibrary="com.leanplum, com.google.android.gms"/>
+    <meta-data android:name="com.reactnativeleanplum.SHOW_NOTIF_IN_DEBUG" android:value="true" />
 
+    <application>
+        <meta-data
+                android:name="com.google.firebase.messaging.default_notification_channel_id"
+                android:value="default"/>
+    <service
+            android:name="com.leanplum.LeanplumPushFirebaseMessagingService">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
+        </intent-filter>
+    </service>
+    <service android:name="com.leanplum.LeanplumPushFcmListenerService">
+        <intent-filter>
+            <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+        </intent-filter>
+    </service></application>
 </manifest>

@@ -26,6 +26,16 @@ check the MainApplication.java file and replace :
 new RNLeanplumPackage(MainApplication.this)
 
 
+add in your build.gradle
+```
+allprojects {
+    repositories {
+        ...
+        maven { url "https://repo.leanplum.com/" }
+        ...
+    }
+}
+```
 ### ios
 
 Add Leanplum keys into the Info.plist file.
