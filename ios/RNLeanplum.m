@@ -154,9 +154,6 @@ RCT_EXPORT_METHOD(onceVariablesChangedAndNoDownloadsPending:(RCTResponseSenderBl
 }
 
 RCT_EXPORT_METHOD(setUserId:(NSString *)userId) {
-
-    NSLog(@"setUserId merde");
-    RCTLog(@"setUserId merde");
     return [Leanplum setUserId:userId];
 }
 

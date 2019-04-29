@@ -16,6 +16,16 @@ public class RNLeanplumPackage implements ReactPackage {
 
     public RNLeanplumPackage(Application app) {
         application = app;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "default";
+            String description = "default channel to send message";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+    }
+
     }
 
     @Override
