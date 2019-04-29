@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/gleephDamien/react-native-leanplum/compare/v2.2.1...v2.2.2) (2019-04-29)
+
+
+### Bug Fixes
+
+* **ios:** push notif initialisation ([83ebf48](https://github.com/gleephDamien/react-native-leanplum/commit/83ebf48))
+
 ## [2.2.1](https://github.com/gleephDamien/react-native-leanplum/compare/v2.2.0...v2.2.1) (2019-04-29)
 
 
