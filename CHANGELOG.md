@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/gleephDamien/react-native-leanplum/compare/v2.1.4...v2.2.0) (2019-04-29)
+
+
+### Features
+
+* **android:** adding push config for android ([77d736e](https://github.com/gleephDamien/react-native-leanplum/commit/77d736e))
+
 ## [2.1.4](https://github.com/gleephDamien/react-native-leanplum/compare/v2.1.3...v2.1.4) (2019-04-15)
 
 
