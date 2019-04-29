@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/gleephDamien/react-native-leanplum/compare/v2.2.0...v2.2.1) (2019-04-29)
+
+
+### Bug Fixes
+
+* **android:** forgotten imports ([dcad883](https://github.com/gleephDamien/react-native-leanplum/commit/dcad883))
+
 # [2.2.0](https://github.com/gleephDamien/react-native-leanplum/compare/v2.1.4...v2.2.0) (2019-04-29)
 
 
