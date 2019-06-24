@@ -1,3 +1,10 @@
+## [2.2.3](https://github.com/gleephDamien/react-native-leanplum/compare/v2.2.2...v2.2.3) (2019-06-24)
+
+
+### Bug Fixes
+
+* **ios:** correction reload ios ([ae5022a](https://github.com/gleephDamien/react-native-leanplum/commit/ae5022a))
+
 ## [2.2.2](https://github.com/gleephDamien/react-native-leanplum/compare/v2.2.1...v2.2.2) (2019-04-29)
 
 
