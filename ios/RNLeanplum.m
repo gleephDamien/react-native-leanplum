@@ -49,7 +49,9 @@ RCT_EXPORT_MODULE(Leanplum);
     // Sets the app version, which otherwise defaults to
     // the build number (CFBundleVersion).
     [Leanplum setAppVersion:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
-    [Leanplum start];
+    if(![Leanplum hasStarted]){
+        [Leanplum start];
+    }
 id notificationCenterClass = NSClassFromString(@"UNUserNotificationCenter");
   if (notificationCenterClass) {
     // iOS 10.
