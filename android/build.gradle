@@ -5,39 +5,71 @@ buildscript {
         maven { url "https://repo.leanplum.com/" }
         mavenCentral()
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
-        classpath 'com.google.gms:google-services:4.0.1'
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath 'com.google.gms:google-services:4.2.0'
     }
 }
 
+
+def DEFAULT_COMPILE_SDK_VERSION = 28
+def DEFAULT_BUILD_TOOLS_VERSION = "28.0.3"
+def DEFAULT_TARGET_SDK_VERSION = 28
+def DEFAULT_SUPPORT_LIB_VERSION = "27.1.1"
+def DEFAULT_GOOGLE_PLAY_SERVICES_VERSION = "+"
+def DEFAULT_FIREBASE_MESSAGING_VERSION = "17.3.2"
+
+def googlePlayServicesVersion = project.hasProperty('googlePlayServicesVersion') ? project.googlePlayServicesVersion : DEFAULT_GOOGLE_PLAY_SERVICES_VERSION
+logger.error(googlePlayServicesVersion)
 repositories {
     mavenCentral()
     maven { url "https://repo.leanplum.com/" }
     maven { url 'https://jitpack.io' }
     maven { url "$rootDir/node_modules/react-native/android" }
+    google()
+    maven {
+        url "https://maven.google.com"
+    }
 }
 android {
-    compileSdkVersion 28
-    buildToolsVersion '25.0.1'
 
+    compileSdkVersion project.hasProperty('compileSdkVersion') ? project.compileSdkVersion : DEFAULT_COMPILE_SDK_VERSION
+    buildToolsVersion project.hasProperty('buildToolsVersion') ? project.buildToolsVersion : DEFAULT_BUILD_TOOLS_VERSION
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion project.hasProperty('targetSdkVersion') ? project.targetSdkVersion : DEFAULT_TARGET_SDK_VERSION
         versionCode 1
         versionName "1.0"
         ndk {
-            abiFilters "armeabi-v7a", "x86"
+            abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     lintOptions {
-       warning 'InvalidPackage'
+        warning 'InvalidPackage'
     }
 }
 
 dependencies {
-    implementation "com.facebook.react:react-native:+"
-    implementation 'com.leanplum:leanplum-fcm:4.2.3'
-    implementation "com.google.firebase:firebase-messaging:17.3.2"
+
+    def supportLibVersion = project.hasProperty('supportLibVersion') ? project.supportLibVersion : DEFAULT_SUPPORT_LIB_VERSION
+
+    def firebaseVersion = project.hasProperty('firebaseVersion') ? project.firebaseVersion : DEFAULT_FIREBASE_MESSAGING_VERSION
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation "com.android.support:appcompat-v7:$supportLibVersion"
+    implementation 'com.facebook.react:react-native:+'
+    implementation "com.google.android.gms:play-services-gcm:$googlePlayServicesVersion"
+    implementation 'me.leolin:ShortcutBadger:1.1.8@aar'
+    implementation "com.google.firebase:firebase-messaging:$firebaseVersion"
+    implementation 'com.leanplum:leanplum-fcm:4.2.7'
 }

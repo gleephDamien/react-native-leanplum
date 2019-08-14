@@ -1,6 +1,7 @@
 import { NativeModules } from 'react-native';
 import { Dictionary } from './Dictionary';
 import { LPInbox } from './LPInbox';
+import { LPPushNotif } from './LPPushNotif';
 
 export type LeanplumAttributes = Dictionary<boolean | number | string>;
 
@@ -17,7 +18,7 @@ export interface LeanplumTrafficSourceInfo {
 export interface LeanplumVariant {
   id: string;
 };
-
+const {RNLeanplum}=NativeModules;
 export const Leanplum = {
   /**
    * Optional. Sets the API server. The API path is of the form http[s]://hostname/servletName
@@ -26,7 +27,7 @@ export const Leanplum = {
    * @param ssl Whether to use SSL
    */
   setApiConnectionSettings: (hostName: string, servletName: string, usingSsl: boolean): void => {
-    return NativeModules.Leanplum.setApiConnectionSettings(hostName, servletName, usingSsl);
+    return RNLeanplum.setApiConnectionSettings(hostName, servletName, usingSsl);
   },
 
   /**
@@ -34,7 +35,7 @@ export const Leanplum = {
    * The default timeout is 10 seconds for requests, and 15 seconds for file downloads.
    */
   setNetworkTimeout: (seconds: number, downloadSeconds: number): void => {
-    return NativeModules.Leanplum.setNetworkTimeout(seconds, downloadSeconds);
+    return RNLeanplum.setNetworkTimeout(seconds, downloadSeconds);
   },
 
   /**
@@ -43,7 +44,7 @@ export const Leanplum = {
    * Default: YES.
    */
   setNetworkActivityIndicatorEnabled: (enabled: boolean): void => {
-    return NativeModules.Leanplum.setNetworkActivityIndicatorEnabled(enabled);
+    return RNLeanplum.setNetworkActivityIndicatorEnabled(enabled);
   },
 
   /**
@@ -52,7 +53,7 @@ export const Leanplum = {
    * while the app is running, and the notification's metadata hasn't be downloaded yet.
    */
   setCanDownloadContentMidSessionInProductionMode: (enabled: boolean): void => {
-    return NativeModules.Leanplum.setCanDownloadContentMidSessionInProductionMode(enabled);
+    return RNLeanplum.setCanDownloadContentMidSessionInProductionMode(enabled);
   },
 
   /**
@@ -63,7 +64,7 @@ export const Leanplum = {
    * that Leanplum will not always have the most up-to-date versions of your resources.
    */
   setFileHashingEnabledInDevelopmentMode: (enabled: boolean): void => {
-    return NativeModules.Leanplum.setFileHashingEnabledInDevelopmentMode(enabled);
+    return RNLeanplum.setFileHashingEnabledInDevelopmentMode(enabled);
   },
 
   /**
@@ -71,7 +72,7 @@ export const Leanplum = {
    * Sets whether to enable verbose logging in development mode. Default: NO.
    */
   setVerboseLoggingInDevelopmentMode: (enabled: boolean): void => {
-    return NativeModules.Leanplum.setVerboseLoggingInDevelopmentMode(enabled);
+    return RNLeanplum.setVerboseLoggingInDevelopmentMode(enabled);
   },
 
   /**
@@ -79,7 +80,7 @@ export const Leanplum = {
    * Sets a custom event name for in-app purchase tracking. Default: Purchase.
    */
   setInAppPurchaseEventName: (event: string): void => {
-    return NativeModules.Leanplum.setInAppPurchaseEventName(event);
+    return RNLeanplum.setInAppPurchaseEventName(event);
   },
 
   /**
@@ -89,7 +90,7 @@ export const Leanplum = {
    * @param accessKey Your development key.
    */
   setAppIdForDevelopmentMode: (appId: string, accessKey: string): void => {
-    return NativeModules.Leanplum.setAppIdForDevelopmentMode(appId, accessKey);
+    return RNLeanplum.setAppIdForDevelopmentMode(appId, accessKey);
   },
 
   /**
@@ -99,7 +100,7 @@ export const Leanplum = {
    * @param accessKey Your production key.
    */
   setAppIdForProductionMode: (appId: string, accessKey: string): void => {
-    return NativeModules.Leanplum.setAppIdForProductionMode(appId, accessKey);
+    return RNLeanplum.setAppIdForProductionMode(appId, accessKey);
   },
 
   /**
@@ -107,7 +108,7 @@ export const Leanplum = {
    * By default, the device ID is the identifier for vendor.
    */
   setDeviceId: (deviceId: string): void => {
-    return NativeModules.Leanplum.setDeviceId(deviceId);
+    return RNLeanplum.setDeviceId(deviceId);
   },
 
   /**
@@ -118,7 +119,7 @@ export const Leanplum = {
    * you can call this before your call to Leanplum.start()
    */
   setAppVersion: (appVersion: string): void => {
-    return NativeModules.Leanplum.setAppVersion(appVersion);
+    return RNLeanplum.setAppVersion(appVersion);
   },
 
   /**
@@ -127,14 +128,14 @@ export const Leanplum = {
    * of the variables used in your app.
    */
   start: (userId?: string, attributes?: LeanplumAttributes): Promise<boolean> => {
-    return NativeModules.Leanplum.start(userId, attributes);
+    return RNLeanplum.start(userId, attributes);
   },
 
   /**
    * Returns whether or not Leanplum has finished starting.
    */
   hasStarted: (): Promise<boolean> => {
-    return NativeModules.Leanplum.hasStarted();
+    return RNLeanplum.hasStarted();
   },
 
   /**
@@ -142,7 +143,7 @@ export const Leanplum = {
    * as a developer.
    */
   hasStartedAndRegisteredAsDeveloper: (): Promise<boolean> => {
-    return NativeModules.Leanplum.hasStartedAndRegisteredAsDeveloper();
+    return RNLeanplum.hasStartedAndRegisteredAsDeveloper();
   },
 
   /**
@@ -151,7 +152,7 @@ export const Leanplum = {
    * in succession.
    */
   onStartResponse: (callback: (success: boolean) => void): void => {
-    return NativeModules.Leanplum.onStartResponse(callback);
+    return RNLeanplum.onStartResponse(callback);
   },
 
   /**
@@ -160,7 +161,7 @@ export const Leanplum = {
    * that can update in realtime.
    */
   onVariablesChanged: (callback: () => void): void => {
-    return NativeModules.Leanplum.onVariablesChanged(callback);
+    return RNLeanplum.onVariablesChanged(callback);
   },
 
   /**
@@ -170,7 +171,7 @@ export const Leanplum = {
    * that can update in realtime.
    */
   onInterfaceChanged: (callback: () => void): void => {
-    return NativeModules.Leanplum.onInterfaceChanged(callback);
+    return RNLeanplum.onInterfaceChanged(callback);
   },
 
   /**
@@ -178,7 +179,7 @@ export const Leanplum = {
    * no files needed to be downloaded or all downloads have been completed).
    */
   onVariablesChangedAndNoDownloadsPending: (callback: () => void): void => {
-    return NativeModules.Leanplum.onceVariablesChangedAndNoDownloadsPending(callback);
+    return RNLeanplum.onceVariablesChangedAndNoDownloadsPending(callback);
   },
 
   /**
@@ -186,21 +187,21 @@ export const Leanplum = {
    * no files needed to be downloaded or all downloads have been completed).
    */
   onceVariablesChangedAndNoDownloadsPending: (callback: () => void): void => {
-    return NativeModules.Leanplum.onceVariablesChangedAndNoDownloadsPending(callback);
+    return RNLeanplum.onceVariablesChangedAndNoDownloadsPending(callback);
   },
 
   /**
    * Updates a user ID after session start.
    */
   setUserId: (userId: string): void => {
-    return NativeModules.Leanplum.setUserId(userId);
+    return RNLeanplum.setUserId(userId);
   },
 
   /**
    * Updates a user ID after session start with a dictionary of user attributes.
    */
   setUserAttributes: (userId: string, attributes: LeanplumAttributes): void => {
-    return NativeModules.Leanplum.setUserAttributes(userId, attributes);
+    return RNLeanplum.setUserAttributes(userId, attributes);
   },
 
   /**
@@ -209,7 +210,7 @@ export const Leanplum = {
    * publisherSubSite, publisherSubCampaign, publisherSubAdGroup, publisherSubAd.
    */
   setTrafficSourceInfo: (info: LeanplumTrafficSourceInfo): void => {
-    return NativeModules.Leanplum.setTrafficSourceInfo(info);
+    return RNLeanplum.setTrafficSourceInfo(info);
   },
 
   /**
@@ -224,7 +225,7 @@ export const Leanplum = {
    * @param params A dictionary with custom parameters.
    */
   advanceTo: (state: string, info?: string, params?: LeanplumAttributes): void => {
-    return NativeModules.Leanplum.advanceTo(state, info, params);
+    return RNLeanplum.advanceTo(state, info, params);
   },
 
   /**
@@ -233,14 +234,14 @@ export const Leanplum = {
    * when someone switches out of your app because that's done automatically.
    */
   pauseState: (): void => {
-    return NativeModules.Leanplum.pauseState();
+    return RNLeanplum.pauseState();
   },
 
   /**
    * Resumes the current state.
    */
   resumeState: (): void => {
-    return NativeModules.Leanplum.resumeState();
+    return RNLeanplum.resumeState();
   },
 
   /**
@@ -249,7 +250,7 @@ export const Leanplum = {
    * 1 state at a time. This method requires LeanplumUIEditor module.
    */
   trackAllAppScreens: (): void => {
-    return NativeModules.Leanplum.trackAllAppScreens();
+    return RNLeanplum.trackAllAppScreens();
   },
 
   /**
@@ -257,7 +258,7 @@ export const Leanplum = {
    * trackInAppPurchases to automatically track IAPs.
    */
   trackPurchase: (event: string, value?: number, currencyCode?: string, params?: LeanplumAttributes): void => {
-    return NativeModules.Leanplum.trackPurchase(event, value || 0, currencyCode, params);
+    return RNLeanplum.trackPurchase(event, value || 0, currencyCode, params);
   },
 
   /**
@@ -265,7 +266,7 @@ export const Leanplum = {
    * Automatically tracks InApp purchase and does server side receipt validation.
    */
   trackInAppPurchases: (): void => {
-    return NativeModules.Leanplum.trackInAppPurchases();
+    return RNLeanplum.trackInAppPurchases();
   },
 
   /**
@@ -274,7 +275,7 @@ export const Leanplum = {
    * To track a purchase, use trackPurchase().
    */
   track: (event: string, value?: number, info?: string, params?: LeanplumAttributes): void => {
-    return NativeModules.Leanplum.track(event, value || 0, info, params);
+    return RNLeanplum.track(event, value || 0, info, params);
   },
 
   /**
@@ -282,7 +283,7 @@ export const Leanplum = {
    * Each variant is a dictionary containing an id.
    */
   variants: (): Promise<Dictionary<LeanplumVariant>[]> => {
-    return NativeModules.Leanplum.variants();
+    return RNLeanplum.variants();
   },
 
   /**
@@ -293,7 +294,7 @@ export const Leanplum = {
    * of whether the variables have changed.
    */
   forceContentUpdate: (callback: () => void): void => {
-    return NativeModules.Leanplum.forceContentUpdate(callback);
+    return RNLeanplum.forceContentUpdate(callback);
   },
 
   /**
@@ -301,7 +302,7 @@ export const Leanplum = {
    * Leanplum from communicating with the server.
    */
   enableTestMode: (): void => {
-    return NativeModules.Leanplum.enableTestMode();
+    return RNLeanplum.enableTestMode();
   },
 
   /**
@@ -309,17 +310,17 @@ export const Leanplum = {
    * communicating with the server. This is useful for unit tests.
    */
   setTestModeEnabled: (isTestModeEnabled: boolean) => {
-    return NativeModules.Leanplum.setTestModeEnabled();
+    return RNLeanplum.setTestModeEnabled();
   },
 
   /**
    * iOS Only.
    * Customize push setup. If this API should be called before [Leanplum start]. If this API is not
-   * used the default push setup from the docs will be used for "Push Ask to Ask" and 
+   * used the default push setup from the docs will be used for "Push Ask to Ask" and
    * "Register For Push".
    */
   setPushSetup: (callback: () => void): void => {
-    return NativeModules.Leanplum.setPushSetup(callback);
+    return RNLeanplum.setPushSetup(callback);
   },
 
   /**
@@ -328,7 +329,7 @@ export const Leanplum = {
    * Leanplum was installed.
    */
   isPreLeanplumInstall: (): Promise<boolean> => {
-    return NativeModules.Leanplum.isPreLeanplumInstall();
+    return RNLeanplum.isPreLeanplumInstall();
   },
 
   /**
@@ -336,7 +337,7 @@ export const Leanplum = {
    * Leanplum.start().
    */
   deviceId: (): Promise<string> => {
-    return NativeModules.Leanplum.deviceId();
+    return RNLeanplum.deviceId();
   },
 
   /**
@@ -344,7 +345,7 @@ export const Leanplum = {
    * [Leanplum start].
    */
   userId: (): Promise<string> => {
-    return NativeModules.Leanplum.userId();
+    return RNLeanplum.userId();
   },
 
   /**
@@ -352,5 +353,9 @@ export const Leanplum = {
    */
   inbox: () => {
       return LPInbox;
-  }
+  },
+  /**
+   * Returns an instance to the singleton LPPushNotif object.
+   */
+  pushNotif:()=>LPPushNotif
 };

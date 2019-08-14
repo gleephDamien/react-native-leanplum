@@ -43,7 +43,7 @@ typings/
 .npm
 
 # npm lock configuration
-package-lock.json
+#package-lock.json
 
 # Optional eslint cache
 .eslintcache
@@ -71,7 +71,7 @@ dist/
 .DS_Store
 
 # BBRN framework
-.eslintrc.json
+#.eslintrc.json
 
 ## iOS
 
@@ -113,3 +113,15 @@ Carthage/Build
 
 # CocoaPods
 Pods/
+
+android/local\.properties
+
+android/gradlew\.bat
+
+android/gradlew
+
+android/android\.iml
+
+android/gradle/wrapper/
+
+android/\.gradle/

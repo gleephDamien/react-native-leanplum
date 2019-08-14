@@ -6,6 +6,9 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
+import com.reactnativeleanplum.inbox.RNLPInbox;
+import com.reactnativeleanplum.inbox.RNLPInboxMessage;
+import com.reactnativeleanplum.push.modules.RNPushNotification;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,16 +31,16 @@ public class RNLeanplumPackage implements ReactPackage {
     }
 
     private void initialiseChannels(ReactApplicationContext c){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "default";
             String description = "default channel to send message";
             String CHANNEL_ID="0";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            int importance = NotificationManager.IMPORTANCE_MIN;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
             NotificationManager notificationManager = c.getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
-        }
+        }*/
     }
 
     @Override
@@ -48,7 +51,7 @@ public class RNLeanplumPackage implements ReactPackage {
         modules.add(new RNLeanplum(reactContext, application));
         modules.add(new RNLPInbox(reactContext, application));
         modules.add(new RNLPInboxMessage(reactContext, application));
-
+        modules.add(new RNPushNotification(reactContext));
         return modules;
     }
 

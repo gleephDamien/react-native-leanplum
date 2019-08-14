@@ -4,18 +4,19 @@ import android.app.Application;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import java.util.logging.Logger;
+import android.util.Log;
+
 
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.bridge.ReadableType;
 
+import com.leanplum.annotations.Parser;
 import com.leanplum.callbacks.StartCallback;
 import com.leanplum.callbacks.VariablesChangedCallback;
 import com.leanplum.Leanplum;
@@ -30,6 +31,7 @@ public class RNLeanplum extends ReactContextBaseJavaModule {
     private String prod_key;
     private String enableDebug;
     private ReactApplicationContext mContext;
+    public static String LOG_TAG="RNLeanplum";
     private String getMetaData(String name) {
         try {
             ApplicationInfo ai = mContext.getPackageManager().getApplicationInfo(
@@ -39,13 +41,13 @@ public class RNLeanplum extends ReactContextBaseJavaModule {
 
             Bundle metaData = ai.metaData;
             if (metaData == null) {
-                Logger.getLogger("ReactNative").warning("metaData is null. Unable to get meta data for " + name);
+                Log.w(LOG_TAG,"metaData is null. Unable to get meta data for " + name);
             } else {
                 String value = metaData.getString(name);
                 return value;
             }
         } catch (PackageManager.NameNotFoundException e) {
-            Logger.getLogger("ReactNative").severe(e.getMessage());
+            Log.e(LOG_TAG,e.getMessage());
             e.printStackTrace();
         }
         return null;
@@ -53,24 +55,25 @@ public class RNLeanplum extends ReactContextBaseJavaModule {
     public RNLeanplum(ReactApplicationContext reactContext, Application app) {
         super(reactContext);
         mContext=reactContext;
+        application = app;
+        Parser.parseVariables(app);
         Leanplum.setApplicationContext(app);
         LeanplumActivityHelper.enableLifecycleCallbacks(app);
-        application = app;
         application_id = getMetaData("com.reactnativeleanplum.APP_ID");
         dev_key = getMetaData("com.reactnativeleanplum.DEV_KEY");
         prod_key = getMetaData("com.reactnativeleanplum.PROD_KEY");
 
         if (BuildConfig.DEBUG) {
-            Logger.getLogger("ReactNative").info("Leanplum launched in debug mode");
+            Log.d(LOG_TAG,"Leanplum launched in debug mode");
             enableDebug = getMetaData("com.reactnativeleanplum.SHOW_NOTIF_IN_DEBUG");
             Leanplum.setAppIdForDevelopmentMode(application_id, dev_key);
             Leanplum.enableVerboseLoggingInDevelopmentMode();
             if(enableDebug=="false"){
-                Logger.getLogger("ReactNative").info("disabling notifications from Leanplum");
+                Log.d(LOG_TAG,"disabling notifications from Leanplum");
                 Leanplum.enableTestMode();
             }
         } else {
-            Logger.getLogger("ReactNative").info("Leanplum launched in release mode");
+            Log.d(LOG_TAG,"Leanplum launched in release mode");
             Leanplum.setAppIdForProductionMode(application_id, prod_key);
         }
         Leanplum.trackAllAppScreens();
