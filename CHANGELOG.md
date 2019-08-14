@@ -1,6 +1,18 @@
 # [2.3.0](https://github.com/gleephDamien/react-native-leanplum/compare/v2.2.3...v2.3.0) (2019-08-14)
 
 
+### Bug Fixes
+
+* **android:** application crash on start ([95bab00](https://github.com/gleephDamien/react-native-leanplum/commit/95bab00))
+
+
+### Features
+
+* **push-notif:** adding dependencies to add push notification ([a057d5a](https://github.com/gleephDamien/react-native-leanplum/commit/a057d5a))
+
+# [2.3.0](https://github.com/gleephDamien/react-native-leanplum/compare/v2.2.3...v2.3.0) (2019-08-14)
+
+
 ### Features
 
 * **push-notif:** adding dependencies to add push notification ([a057d5a](https://github.com/gleephDamien/react-native-leanplum/commit/a057d5a))
