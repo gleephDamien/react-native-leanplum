@@ -82,7 +82,7 @@ public class RNLeanplum extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "Leanplum";
+        return "RNLeanplum";
     }
 
     @ReactMethod

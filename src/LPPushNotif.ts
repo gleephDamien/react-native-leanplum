@@ -1,6 +1,7 @@
 /**
  * @providesModule Notifications
  */
+import {PushNotificationIOS} from "@react-native-community/push-notification-ios";
 
 var RNNotificationsComponent = require( './component' );
 
@@ -234,7 +235,7 @@ export const LPPushNotif = {
 					badge: data.getBadgeCount(),
 					alert: data.getAlert(),
 					sound: data.getSound(),
-				finish: (res) => data.finish(res)
+				finish: (res) => data.finish(PushNotificationIOS.FetchResult.NoData)
 				});
 			} else {
 				var notificationData = {
