@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/gleephDamien/react-native-leanplum/compare/v2.2.3...v2.3.0) (2019-08-14)
+
+
+### Features
+
+* **push-notif:** adding dependencies to add push notification ([a057d5a](https://github.com/gleephDamien/react-native-leanplum/commit/a057d5a))
+
 ## [2.2.3](https://github.com/gleephDamien/react-native-leanplum/compare/v2.2.2...v2.2.3) (2019-06-24)
 
 

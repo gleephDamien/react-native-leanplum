@@ -1,6 +1,12 @@
 // Define suffix-less index module for unit tests
-var Platform = require('react-native').Platform;
-module.exports = (Platform.OS==='ios'&&require('./index.ios.js')) ||(Platform.OS==='android'&&require('./index.android.js')) ||({
+import {Platform} from 'react-native';
+let comp={
   state: {},
   component: {}
-});
+};
+if(Platform.OS==='ios'){
+  comp=require('./index.ios.js');
+} else if(Platform.OS==='android'){
+  comp=require('./index.android.js');
+}
+export default comp;
