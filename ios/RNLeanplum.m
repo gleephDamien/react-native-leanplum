@@ -20,7 +20,7 @@ static NSString * const kRNLeanplumDuplicateStartErrorCode = @"RNLeanplumDuplica
 static NSString * const kRNLeanplumDuplicateStartErrorReason = @"Leanplum: Already called start. Calling start a second time has no effect.";
 
 @implementation RNLeanplum
-RCT_EXPORT_MODULE(Leanplum);
+RCT_EXPORT_MODULE();
 
 - (RNLeanplum *)init {
 
@@ -52,46 +52,6 @@ RCT_EXPORT_MODULE(Leanplum);
     if(![Leanplum hasStarted]){
         [Leanplum start];
     }
-id notificationCenterClass = NSClassFromString(@"UNUserNotificationCenter");
-  if (notificationCenterClass) {
-    // iOS 10.
-    SEL selector = NSSelectorFromString(@"currentNotificationCenter");
-    id notificationCenter =
-    ((id (*)(id, SEL)) [notificationCenterClass methodForSelector:selector])
-    (notificationCenterClass, selector);
-    if (notificationCenter) {
-      selector = NSSelectorFromString(@"requestAuthorizationWithOptions:completionHandler:");
-      IMP method = [notificationCenter methodForSelector:selector];
-      void (*func)(id, SEL, unsigned long long, void (^)(BOOL, NSError *__nullable)) =
-      (void *) method;
-      func(notificationCenter, selector,
-           0b111, /* badges, sounds, alerts */
-           ^(BOOL granted, NSError *__nullable error) {
-             if (error) {
-               NSLog(@"Leanplum: Failed to request authorization for user "
-                     "notifications: %@", error);
-             }
-           });
-    }
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
-  } else if ([[UIApplication sharedApplication] respondsToSelector:
-              @selector(registerUserNotificationSettings:)]) {
-    // iOS 8-9.
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings
-                                            settingsForTypes:UIUserNotificationTypeAlert |
-                                            UIUserNotificationTypeBadge |
-                                            UIUserNotificationTypeSound categories:nil];
-    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
-  } else {
-    // iOS 7 and below.
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-#pragma clang diagnostic pop
-     UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge];
-  }
-    // Starts a new session and updates the app content from Leanplum.
     return self;
 }
 RCT_REMAP_METHOD(setApiConnectionSettings,

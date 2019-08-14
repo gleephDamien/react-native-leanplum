@@ -5,12 +5,12 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		A8DDBB6B1F472A0E00AD4299 /* RNLeanplum.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DDBB6A1F472A0E00AD4299 /* RNLeanplum.m */; };
 		F94B7DF421652665001A2869 /* RNLPInboxMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F94B7DF021652664001A2869 /* RNLPInboxMessage.m */; };
 		F94B7DF521652665001A2869 /* RNLPInbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F94B7DF321652664001A2869 /* RNLPInbox.m */; };
 		F94B7DF82165266A001A2869 /* LPInboxMessage+RNAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F94B7DF62165266A001A2869 /* LPInboxMessage+RNAdditions.m */; };
+		4331E61A55264AF1ACE1031B /* libRNCPushNotificationIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 994E8935A3F646349598FF63 /* libRNCPushNotificationIOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +35,8 @@
 		F94B7DF321652664001A2869 /* RNLPInbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNLPInbox.m; sourceTree = "<group>"; };
 		F94B7DF62165266A001A2869 /* LPInboxMessage+RNAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LPInboxMessage+RNAdditions.m"; sourceTree = "<group>"; };
 		F94B7DF72165266A001A2869 /* LPInboxMessage+RNAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LPInboxMessage+RNAdditions.h"; sourceTree = "<group>"; };
+		91ADB854E3CA4551A1B70B03 /* PushNotificationIOS.xcodeproj */ = {isa = PBXFileReference; name = "PushNotificationIOS.xcodeproj"; path = "../node_modules/@react-native-community/push-notification-ios/ios/PushNotificationIOS.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		994E8935A3F646349598FF63 /* libRNCPushNotificationIOS.a */ = {isa = PBXFileReference; name = "libRNCPushNotificationIOS.a"; path = "libRNCPushNotificationIOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4331E61A55264AF1ACE1031B /* libRNCPushNotificationIOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +63,7 @@
 				F94B7DF121652664001A2869 /* RNLPInboxMessage.h */,
 				F94B7DF021652664001A2869 /* RNLPInboxMessage.m */,
 				A8DDBB671F472A0E00AD4299 /* Products */,
+				8B043D6BD0D64383B8A0311C /* Libraries */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +73,15 @@
 				A8DDBB661F472A0E00AD4299 /* libRNLeanplum.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8B043D6BD0D64383B8A0311C /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				91ADB854E3CA4551A1B70B03 /* PushNotificationIOS.xcodeproj */,
+			);
+			name = Libraries;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,7 +110,7 @@
 		A8DDBB5E1F472A0E00AD4299 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 830;
 				ORGANIZATIONNAME = "Branding Brand";
 				TargetAttributes = {
 					A8DDBB651F472A0E00AD4299 = {
@@ -247,11 +260,16 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 					"$(SRCROOT)/../../../ios/Pods/**",
+					"$(SRCROOT)/../node_modules/@react-native-community/push-notification-ios/ios",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Debug;
 		};
@@ -274,11 +292,16 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 					"$(SRCROOT)/../../../ios/Pods/**",
+					"$(SRCROOT)/../node_modules/@react-native-community/push-notification-ios/ios",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Release;
 		};

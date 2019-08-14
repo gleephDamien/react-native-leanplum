@@ -1,4 +1,4 @@
-package com.reactnativeleanplum;
+package com.reactnativeleanplum.inbox;
 
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
