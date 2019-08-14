@@ -32,9 +32,8 @@
 
     <application>
         <meta-data android:name="com.reactnativeleanplum.SHOW_NOTIF_IN_DEBUG" android:value="true" />
-        <meta-data android:name="com.reactnativeleanplum.push.modules.notification_channel_name" android:value="lp_push" />
+        <meta-data android:name="com.reactnativeleanplum.push.modules.notification_channel_name" android:value="default" />
         <meta-data android:name="com.reactnativeleanplum.push.modules.notification_color" android:value="#FFF" />
-        <meta-data android:name="com.reactnativeleanplum.push.modules.channel_importance" android:value="min" />
 
 
         <meta-data
