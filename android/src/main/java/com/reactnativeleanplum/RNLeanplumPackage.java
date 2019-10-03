@@ -6,6 +6,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
+import com.google.firebase.FirebaseApp;
 import com.reactnativeleanplum.inbox.RNLPInbox;
 import com.reactnativeleanplum.inbox.RNLPInboxMessage;
 import com.reactnativeleanplum.push.modules.RNPushNotification;
@@ -19,8 +20,8 @@ import android.app.NotificationChannel;
 
 public class RNLeanplumPackage implements ReactPackage {
     private Application application;
-
     public RNLeanplumPackage(Application app) {
+        FirebaseApp.initializeApp(app);
         application = app;
 
     }
