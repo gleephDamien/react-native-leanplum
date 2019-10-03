@@ -54,29 +54,9 @@ public class RNLeanplum extends ReactContextBaseJavaModule {
     public RNLeanplum(ReactApplicationContext reactContext, Application app) {
         super(reactContext);
         mContext=reactContext;
-        application = app;
         Parser.parseVariables(app);
         Leanplum.setApplicationContext(app);
         LeanplumActivityHelper.enableLifecycleCallbacks(app);
-        application_id = getMetaData("com.reactnativeleanplum.APP_ID");
-        dev_key = getMetaData("com.reactnativeleanplum.DEV_KEY");
-        prod_key = getMetaData("com.reactnativeleanplum.PROD_KEY");
-
-        if (BuildConfig.DEBUG) {
-            Log.d(LOG_TAG,"Leanplum launched in debug mode");
-            enableDebug = getMetaData("com.reactnativeleanplum.SHOW_NOTIF_IN_DEBUG");
-            Leanplum.setAppIdForDevelopmentMode(application_id, dev_key);
-            Leanplum.enableVerboseLoggingInDevelopmentMode();
-            if(enableDebug=="false"){
-                Log.d(LOG_TAG,"disabling notifications from Leanplum");
-                Leanplum.enableTestMode();
-            }
-        } else {
-            Log.d(LOG_TAG,"Leanplum launched in release mode");
-            Leanplum.setAppIdForProductionMode(application_id, prod_key);
-        }
-        Leanplum.trackAllAppScreens();
-        Leanplum.start(app);
     }
 
     @Override
