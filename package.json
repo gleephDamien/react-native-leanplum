@@ -8,17 +8,14 @@
     "@react-native-community/push-notification-ios": "^1.0.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.1.2",
-    "@commitlint/config-conventional": "^7.1.2",
-    "@commitlint/travis-cli": "^7.1.2",
-    "@semantic-release/changelog": "^2.1.1",
-    "@semantic-release/git": "^6.0.1",
-    "@types/react": "^16.8.24",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@commitlint/travis-cli": "^8.1.0",
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/git": "^7.0.16",
     "@types/react-native": "^0.46.7",
-    "semantic-release": "^15.6.0",
-    "ts-loader": "^6.0.4",
-    "typescript": "^3.0.1",
-    "@types/node": "^12.7.1"
+    "semantic-release": "^15.13.20",
+    "typescript": "^3.0.1"
   },
   "homepage": "https://github.com/gleephDamien/react-native-leanplum#readme",
   "license": "MIT",
