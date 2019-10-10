@@ -5,8 +5,7 @@ module.exports = {
        platforms: {
          android:{
          packageImportPath: 'import com.reactnativeleanplum.RNLeanplumPackage;',
-           packageInstance:"new RNLeanplumPackage(getApplication())",
-             sourceDir:'./android'
+           packageInstance:"new RNLeanplumPackage(getApplication())"
          },
          ios: {
 

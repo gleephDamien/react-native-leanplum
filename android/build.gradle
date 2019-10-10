@@ -63,7 +63,6 @@ dependencies {
     implementation "com.facebook.react:react-native:+"
     implementation 'com.leanplum:leanplum-fcm:5.2.3'
     implementation 'com.google.firebase:firebase-messaging:17.5.0'
-
     implementation 'com.leanplum:leanplum-location:5.2.3'
     implementation "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
 }
