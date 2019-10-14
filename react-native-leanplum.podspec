@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.platform       = :ios, "9.0"
   s.source         = { :git => "https://github.com/gleephDamien/react-native-leanplum.git", :tag => version }
   s.source_files   = 'ios/*.{h,m}'
-
   s.dependency 'React'
-  s.dependency 'Leanplum-iOS-SDK'
+  s.dependency 'Leanplum-iOS-SDK', '2.6.2'
+
 end

@@ -8,7 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v4.app.NotificationManagerCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.reactnativeleanplum.push.helpers.ApplicationBadgeHelper;
 import com.facebook.react.bridge.ActivityEventListener;
@@ -129,6 +129,7 @@ public class RNPushNotification extends ReactContextBaseJavaModule implements Ac
 
     @ReactMethod
     public void requestPermissions(String senderID) {
+        /*
         ReactContext reactContext = getReactApplicationContext();
 
         Intent GCMService = new Intent(reactContext, RNPushNotificationRegistrationService.class);
@@ -138,7 +139,7 @@ public class RNPushNotification extends ReactContextBaseJavaModule implements Ac
             reactContext.startService(GCMService);
         } catch (Exception e) {
             Log.e("EXCEPTION SERVICE::::::", "requestPermissions: " + e);
-        }
+        }*/
     }
 
     @ReactMethod

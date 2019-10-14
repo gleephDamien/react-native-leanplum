@@ -2,29 +2,29 @@
           package="com.reactnativeleanplum">
     <uses-sdk
         tools:overrideLibrary="com.google.android.gms, com.leanplum"/>
-    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" tools:node="remove"/>
-    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" tools:node="remove"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
 
 
-    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" tools:node="remove"/>
-    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" tools:node="remove"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" />
 
 
-    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" tools:node="remove"/>
-    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" tools:node="remove"/>
-    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" tools:node="remove"/>
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" />
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" />
 
-    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" tools:node="remove"/>
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" />
 
-    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" tools:node="remove"/>
-    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" tools:node="remove"/>
-    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" tools:node="remove"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
 
 
 
 
     <!--for ZUK-->
-    <uses-permission android:name="android.permission.READ_APP_BADGE" tools:node="remove"/>
+    <uses-permission android:name="android.permission.READ_APP_BADGE" />
 
 
 
@@ -50,15 +50,13 @@
             <action android:name="android.intent.action.BOOT_COMPLETED" />
         </intent-filter>
     </receiver>
-    <service android:name="com.reactnativeleanplum.push.modules.RNPushNotificationRegistrationService"/>
 
 
+        <!--service android:name="com.reactnativeleanplum.push.modules.RNPushNotificationRegistrationService">
+            <intent-filter>
 
-    <!--service android:name="com.reactnativeleanplum.push.modules.RNPushNotificationRegistrationService">
-        <intent-filter>
-
-        </intent-filter>
-    </service-->
+            </intent-filter>
+        </service-->
 
     <service
         android:name="com.reactnativeleanplum.push.modules.RNPushNotificationListenerService"

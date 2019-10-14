@@ -22,12 +22,14 @@ def DEFAULT_GOOGLE_PLAY_SERVICES_VERSION = "+"
 def DEFAULT_FIREBASE_MESSAGING_VERSION = "17.3.2"
 
 def googlePlayServicesVersion = project.hasProperty('googlePlayServicesVersion') ? project.googlePlayServicesVersion : DEFAULT_GOOGLE_PLAY_SERVICES_VERSION
-logger.error(googlePlayServicesVersion)
+
 repositories {
     mavenCentral()
     maven { url "https://repo.leanplum.com/" }
     maven { url 'https://jitpack.io' }
-    maven { url "$rootDir/node_modules/react-native/android" }
+    maven {
+        url "$rootDir/../node_modules/react-native/android"
+    }
     google()
     maven {
         url "https://maven.google.com"
@@ -58,18 +60,11 @@ android {
 }
 
 dependencies {
-
-    def supportLibVersion = project.hasProperty('supportLibVersion') ? project.supportLibVersion : DEFAULT_SUPPORT_LIB_VERSION
-
-    def firebaseVersion = project.hasProperty('firebaseVersion') ? project.firebaseVersion : DEFAULT_FIREBASE_MESSAGING_VERSION
-
-
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    implementation "com.android.support:appcompat-v7:$supportLibVersion"
-    implementation 'com.facebook.react:react-native:+'
-    implementation "com.google.android.gms:play-services-gcm:$googlePlayServicesVersion"
+    implementation "com.google.android.gms:play-services-iid:$googlePlayServicesVersion"
     implementation 'me.leolin:ShortcutBadger:1.1.8@aar'
-    implementation "com.google.firebase:firebase-messaging:$firebaseVersion"
-    implementation 'com.leanplum:leanplum-fcm:4.2.7'
+    implementation "com.facebook.react:react-native:+"
+    implementation 'com.leanplum:leanplum-fcm:5.2.3'
+    implementation 'com.google.firebase:firebase-messaging:17.5.0'
+    implementation 'com.leanplum:leanplum-location:5.2.3'
+    implementation "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
 }

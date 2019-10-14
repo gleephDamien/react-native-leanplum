@@ -1,3 +1,22 @@
+## [3.0.1](https://github.com/brandingbrand/react-native-leanplum/compare/v3.0.0...v3.0.1) (2019-08-06)
+
+
+### Bug Fixes
+
+* update packages for security alerts ([61dd29d](https://github.com/brandingbrand/react-native-leanplum/commit/61dd29d))
+
+# [3.0.0](https://github.com/brandingbrand/react-native-leanplum/compare/v2.0.3...v3.0.0) (2019-07-18)
+
+
+### chore
+
+* update android to sdk 28 ([90caefd](https://github.com/brandingbrand/react-native-leanplum/commit/90caefd))
+
+
+### BREAKING CHANGES
+
+* This updates the Android SDK to 28 and updates gradle settings to enable 64 bit releases.
+
 # [2.3.0](https://github.com/gleephDamien/react-native-leanplum/compare/v2.2.3...v2.3.0) (2019-08-14)
 
 

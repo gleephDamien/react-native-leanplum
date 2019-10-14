@@ -1,9 +1,6 @@
 package com.reactnativeleanplum.push.modules;
 
 
-import java.util.Map;
-import com.google.firebase.messaging.RemoteMessage;
-
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.app.Application;
@@ -12,17 +9,18 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
-import com.reactnativeleanplum.push.helpers.ApplicationBadgeHelper;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
-
+import com.google.firebase.messaging.RemoteMessage;
 import com.leanplum.LeanplumPushFirebaseMessagingService;
+import com.reactnativeleanplum.push.helpers.ApplicationBadgeHelper;
 
 import org.json.JSONObject;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import static com.reactnativeleanplum.push.modules.RNPushNotification.LOG_TAG;
