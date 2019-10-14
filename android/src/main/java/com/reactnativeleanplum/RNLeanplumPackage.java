@@ -3,6 +3,7 @@ package com.reactnativeleanplum;
 import android.app.Application;
 
 import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
@@ -14,9 +15,6 @@ import com.reactnativeleanplum.push.modules.RNPushNotification;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import android.os.Build;
-import android.app.NotificationManager;
-import android.app.NotificationChannel;
 
 public class RNLeanplumPackage implements ReactPackage {
     private Application application;

@@ -235,7 +235,7 @@ export const LPPushNotif = {
 					badge: data.getBadgeCount(),
 					alert: data.getAlert(),
 					sound: data.getSound(),
-				finish: (res) => data.finish(PushNotificationIOS.FetchResult.NoData)
+				finish: (res) => {}//data.finish(PushNotificationIOS.FetchResult.NoData)
 				});
 			} else {
 				var notificationData = {
