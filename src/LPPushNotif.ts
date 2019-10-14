@@ -1,7 +1,7 @@
 /**
  * @providesModule Notifications
  */
-import {PushNotificationIOS} from "@react-native-community/push-notification-ios";
+//import {PushNotificationIOS} from "@react-native-community/push-notification-ios";
 
 var RNNotificationsComponent = require( './component' );
 
