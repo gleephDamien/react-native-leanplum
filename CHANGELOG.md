@@ -1,3 +1,25 @@
+# [3.0.0](https://github.com/gleephDamien/react-native-leanplum/compare/v2.3.1...v3.0.0) (2019-10-14)
+
+
+### Bug Fixes
+
+* update packages for security alerts ([61dd29d](https://github.com/gleephDamien/react-native-leanplum/commit/61dd29d936c9e8e668cfc3b2a9e04454c3465be6))
+
+
+### chore
+
+* update android to sdk 28 ([90caefd](https://github.com/gleephDamien/react-native-leanplum/commit/90caefddce9f2cb851c23b35828a95c8c53057c2))
+
+
+### Features
+
+* **android:** add androidX support ([4ebf3df](https://github.com/gleephDamien/react-native-leanplum/commit/4ebf3dfb7b9535d949459f4ab660daa4065efe87))
+
+
+### BREAKING CHANGES
+
+* This updates the Android SDK to 28 and updates gradle settings to enable 64 bit releases.
+
 ## [3.0.1](https://github.com/brandingbrand/react-native-leanplum/compare/v3.0.0...v3.0.1) (2019-08-06)
 
 
