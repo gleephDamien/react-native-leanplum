@@ -26,7 +26,6 @@ RCT_EXPORT_MODULE();
 
     self=[super init];
 #ifdef DEBUG
-    LEANPLUM_USE_ADVERTISING_ID;
     [Leanplum setAppId:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"LeanplumAppId"]
     withDevelopmentKey:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"LeanplumDevSecret"]];
 #else
