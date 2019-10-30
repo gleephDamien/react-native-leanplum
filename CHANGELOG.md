@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/gleephDamien/react-native-leanplum/compare/v3.0.0...v3.0.1) (2019-10-30)
+
+
+### Bug Fixes
+
+* **ios:** crash on debug ([c7d85cb](https://github.com/gleephDamien/react-native-leanplum/commit/c7d85cb1ea3bd98d827bd88c3a27f6d2b48db343))
+
 # [3.0.0](https://github.com/gleephDamien/react-native-leanplum/compare/v2.3.1...v3.0.0) (2019-10-14)
 
 
