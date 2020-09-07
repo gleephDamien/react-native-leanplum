@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/gleephDamien/react-native-leanplum/compare/v3.0.1...v3.0.2) (2020-09-07)
+
+
+### Bug Fixes
+
+* **android:** push notification ([6e1e11c](https://github.com/gleephDamien/react-native-leanplum/commit/6e1e11ca27e86b939bda69179d97d2bc92f3f439))
+
 ## [3.0.1](https://github.com/gleephDamien/react-native-leanplum/compare/v3.0.0...v3.0.1) (2019-10-30)
 
 
