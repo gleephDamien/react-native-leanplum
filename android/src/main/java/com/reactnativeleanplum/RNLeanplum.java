@@ -28,7 +28,6 @@ public class RNLeanplum extends ReactContextBaseJavaModule {
     private String application_id;
     private String dev_key;
     private String prod_key;
-    private String enableDebug;
     private ReactApplicationContext mContext;
     public static String LOG_TAG="RNLeanplum";
     private String getMetaData(String name) {
@@ -63,13 +62,9 @@ public class RNLeanplum extends ReactContextBaseJavaModule {
 
         if (BuildConfig.DEBUG) {
             Log.d(LOG_TAG,"Leanplum launched in debug mode");
-            enableDebug = getMetaData("com.reactnativeleanplum.SHOW_NOTIF_IN_DEBUG");
             Leanplum.setAppIdForDevelopmentMode(application_id, dev_key);
             Leanplum.enableVerboseLoggingInDevelopmentMode();
-            if(enableDebug=="false"){
-                Log.d(LOG_TAG,"disabling notifications from Leanplum");
-                Leanplum.enableTestMode();
-            }
+            //Leanplum.enableTestMode();
         } else {
             Log.d(LOG_TAG,"Leanplum launched in release mode");
             Leanplum.setAppIdForProductionMode(application_id, prod_key);
