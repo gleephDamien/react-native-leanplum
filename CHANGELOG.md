@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/gleephDamien/react-native-leanplum/compare/v3.0.2...v3.0.3) (2020-09-08)
+
+
+### Bug Fixes
+
+* **android:** missing devMode ([8dbe99b](https://github.com/gleephDamien/react-native-leanplum/commit/8dbe99b67bec0ff99ec25631c172320ffad04552))
+
 ## [3.0.2](https://github.com/gleephDamien/react-native-leanplum/compare/v3.0.1...v3.0.2) (2020-09-07)
 
 
