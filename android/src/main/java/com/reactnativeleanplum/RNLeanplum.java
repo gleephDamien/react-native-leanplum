@@ -64,7 +64,7 @@ public class RNLeanplum extends ReactContextBaseJavaModule {
             Log.d(LOG_TAG,"Leanplum launched in debug mode");
             Leanplum.setAppIdForDevelopmentMode(application_id, dev_key);
             Leanplum.enableVerboseLoggingInDevelopmentMode();
-            //Leanplum.enableTestMode();
+            Leanplum.enableTestMode();
         } else {
             Log.d(LOG_TAG,"Leanplum launched in release mode");
             Leanplum.setAppIdForProductionMode(application_id, prod_key);
