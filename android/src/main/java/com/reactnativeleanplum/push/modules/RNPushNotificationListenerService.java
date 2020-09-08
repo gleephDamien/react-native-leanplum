@@ -51,6 +51,9 @@ public class RNPushNotificationListenerService extends LeanplumPushFirebaseMessa
         if (bundle.containsKey("twi_body")) {
             bundle.putString("message", bundle.getString("twi_body"));
         }
+        if (bundle.containsKey("lp_message")) {
+            bundle.putString("message", bundle.getString("lp_message"));
+        }
 
         if (data != null) {
             if (!bundle.containsKey("message")) {
