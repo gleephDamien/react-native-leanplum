@@ -1,3 +1,10 @@
+## [3.0.5](https://github.com/gleephDamien/react-native-leanplum/compare/v3.0.4...v3.0.5) (2020-09-09)
+
+
+### Bug Fixes
+
+* **android:** ensure push notification color ([1af8910](https://github.com/gleephDamien/react-native-leanplum/commit/1af891082e67fb0609f8fe580b9325660c8361cf))
+
 ## [3.0.4](https://github.com/gleephDamien/react-native-leanplum/compare/v3.0.3...v3.0.4) (2020-09-08)
 
 
