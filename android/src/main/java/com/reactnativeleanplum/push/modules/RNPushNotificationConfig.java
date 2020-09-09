@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import androidx.core.content.res.ResourcesCompat;
+
+import android.graphics.ColorSpace;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -65,7 +67,6 @@ class RNPushNotificationConfig {
         } catch (Exception e) {
             Log.w(RNPushNotification.LOG_TAG, "Unable to find " + KEY_NOTIFICATION_COLOR + " in manifest. Falling back to default");
         }
-        // Default
-        return -1;
+        return 0x00ffffff;
     }
 }
