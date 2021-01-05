@@ -1,3 +1,11 @@
+# [3.1.0](https://github.com/gleephDamien/react-native-leanplum/compare/v3.0.5...v3.1.0) (2021-01-05)
+
+
+### Features
+
+* **android:** start js ([8ee9332](https://github.com/gleephDamien/react-native-leanplum/commit/8ee9332f29e135107d5bd23a7afceeb1cf3d5fd9))
+* **ios:** js starting ([95a9566](https://github.com/gleephDamien/react-native-leanplum/commit/95a95669d13e69e0abd74a915a72f19f8a8731f9))
+
 ## [3.0.5](https://github.com/gleephDamien/react-native-leanplum/compare/v3.0.4...v3.0.5) (2020-09-09)
 
 
