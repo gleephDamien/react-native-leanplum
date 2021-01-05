@@ -48,9 +48,6 @@ RCT_EXPORT_MODULE();
     // Sets the app version, which otherwise defaults to
     // the build number (CFBundleVersion).
     [Leanplum setAppVersion:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
-    if(![Leanplum hasStarted]){
-        [Leanplum start];
-    }
     return self;
 }
 RCT_REMAP_METHOD(setApiConnectionSettings,
